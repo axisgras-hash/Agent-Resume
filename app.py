@@ -152,8 +152,8 @@ def main_agent(agent, query):
 # Fetch Latest Domain related Jobs using Tavily
 
 def get_jobs(agent,
-             Location = "Noida,Delhi",
-             Profile = "Data Analysts, AI Engineer"):
+             Location,
+             Profile):
   Location = "Noida,Delhi"
   Profile = "Data Analysts, AI Engineer"
 
