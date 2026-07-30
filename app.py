@@ -62,6 +62,11 @@ profile = st.sidebar.multiselect("Select Job Profile",
                                   options = profile_op)
 
 
+# =========GET USER INFO=============
+st.markdown("""### GET USER INFO""")
+user_info = st.text_area("""Write your Resume Description: """)
+
+
 # ================ MODEL====================
 model = ChatGoogleGenerativeAI(
     model = 'gemini-3.5-flash-lite',
@@ -171,6 +176,18 @@ def get_jobs(agent,
 
 # code = get_jobs(agent)
 # DISPLAY.HTML(code)
+
+
+if st.button("Generate Resume"):
+           with st.spinner("Agent Running"):
+                      code = main_agent(agent,user_info)
+                      st.html(code , width="stretch" , 
+                              unsafe_allow_javascript=True)
+                      st.divider()  # to give horizontal div
+                      jobe_code = get_jobs(agent,location,profile)
+                      st.html(job_code , width="stretch" , 
+                              unsafe_allow_javascript=True)
+                      
 
 
 
