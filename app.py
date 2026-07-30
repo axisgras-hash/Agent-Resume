@@ -310,7 +310,7 @@ if st.button("Generate Resume"):
                 os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
                 
                 runtime_model = ChatGoogleGenerativeAI(
-                    model='gemini-1.5-flash', # Using tool-stable model
+                    model='gemini-3.5-flash-lite', # Using tool-stable model
                     google_api_key=GOOGLE_API_KEY
                 )
                 
