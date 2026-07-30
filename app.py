@@ -14,6 +14,21 @@ import pandas as pd
 import numpy as np
 
 
+
+# To Show web-app: complete page layout
+st.set_page_config(layout="wide")
+
+# To Give Title
+st.title("AI RESUME GENERATOR")
+
+st.write("""This app helps user to build customized Professional
+Resume with Latest Job apply links""")
+
+st.image("bg.png")
+
+
+
+
 # ========API KEYS============# 
 # Step 3 API keys
 TAVILY_API_KEY = "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"
@@ -27,8 +42,8 @@ model = ChatGoogleGenerativeAI(
     google_api_key = GOOGLE_API_KEY
 )
 
-response = model.invoke("Hello Buddy!")
-response.content[-1]['text']
+# response = model.invoke("Hello Buddy!")
+# response.content[-1]['text']
 
 
 # ======================TOOLS===============
@@ -50,7 +65,7 @@ agent = create_agent(
     model = model,
     tools = [search_latest_news_jobs])
 
-agent
+# agent
 
 
 def main_agent(agent, query):
@@ -97,9 +112,9 @@ def main_agent(agent, query):
   return code
 
 
-code = main_agent(agent,"ALAN TURING, GEN AI EXPERT")
-from IPython import display as DISPLAY
-DISPLAY.HTML(code)
+# code = main_agent(agent,"ALAN TURING, GEN AI EXPERT")
+# from IPython import display as DISPLAY
+# DISPLAY.HTML(code)
 
 
 
@@ -128,7 +143,8 @@ def get_jobs(agent,
 
   return code
 
+# code = get_jobs(agent)
+# DISPLAY.HTML(code)
 
 
-code = get_jobs(agent)
-DISPLAY.HTML(code)
+
