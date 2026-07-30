@@ -48,6 +48,19 @@ else:
     st.info("PASS ALL API-KEYS")
     
 
+# MULTISELECT OPTION
+options = ["Delhi","Mumbai",
+           "Pune","Banglore",
+           "Gurugram/Gurgaon"]
+location = st.sidebar.multiselect("Select Location",
+                                  options = options)
+
+profile_op = ["Data Analysts","AI Engineer",
+              "Gen AI Developer","Full-Stack Dev",
+              "Data Scientist"]
+profile = st.sidebar.multiselect("Select Job Profile",
+                                  options = profile_op)
+
 
 # ================ MODEL====================
 model = ChatGoogleGenerativeAI(
